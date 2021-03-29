@@ -18,14 +18,13 @@
   "author": "Romain Lanz <romain.lanz+npm@pm.me>",
   "license": "MIT",
   "peerDependencies": {
-    "@adonisjs/core": ">=5.0.0-preview"
+    "@adonisjs/core": ">=5.1.0"
   },
   "devDependencies": {
-    "@adonisjs/core": "^2.10.4",
-    "@adonisjs/fold": "^4.0.9",
-    "@adonisjs/mrm-preset": "^2.2.4",
+    "@adonisjs/core": "^5.1.0",
+    "@adonisjs/mrm-preset": "^3.0.0",
     "del-cli": "^3.0.1",
-    "typescript": "^3.8.3"
+    "typescript": "^4.2.3"
   },
   "adonisjs": {
     "types": "adonis-async-http-context",
