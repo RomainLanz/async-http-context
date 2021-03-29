@@ -1,18 +1,18 @@
-import { IocContract } from '@adonisjs/fold'
+import { ApplicationContract } from '@ioc:Adonis/Core/Application'
 import AsyncHttpContext from './AsyncHttpContext'
 import AsyncHttpContextMiddleware from './AsyncHttpContextMiddleware'
 
 export default class AppProvider {
-  constructor (protected $container: IocContract) {
+  constructor (protected $app: ApplicationContract) {
   }
 
   public register () {
-    this.$container.singleton('Adonis/Core/AsyncHttpContext', () => {
+    this.$app.container.singleton('Adonis/Core/AsyncHttpContext', () => {
       return new AsyncHttpContext()
     })
 
-    this.$container.bind('Adonis/Core/AsyncHttpContextMiddleware', () => {
-      const asyncContext = this.$container.use('Adonis/Core/AsyncHttpContext')
+    this.$app.container.bind('Adonis/Core/AsyncHttpContextMiddleware', () => {
+      const asyncContext = this.$app.container.use('Adonis/Core/AsyncHttpContext')
 
       return new AsyncHttpContextMiddleware(asyncContext)
     })
